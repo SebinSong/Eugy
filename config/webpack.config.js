@@ -151,6 +151,10 @@ module.exports = function (webpackEnv) {
           loader: require.resolve(preProcessor),
           options: {
             sourceMap: true,
+            sassOptions: {
+              includePaths: [ paths.appScss ]
+            },
+            additionalData: `@import 'variables';`
           },
         }
       );
@@ -333,6 +337,8 @@ module.exports = function (webpackEnv) {
           'react-dom$': 'react-dom/profiling',
           'scheduler/tracing': 'scheduler/tracing-profiling',
         }),
+        '@components': paths.appComponents,
+        '@assets': paths.appAssets,
         ...(modules.webpackAliases || {}),
       },
       plugins: [
@@ -508,6 +514,7 @@ module.exports = function (webpackEnv) {
                   sourceMap: isEnvProduction
                     ? shouldUseSourceMap
                     : isEnvDevelopment,
+                  
                 },
                 'sass-loader'
               ),

@@ -1,0 +1,26 @@
+
+@font-face {
+  src: url(../assets/fonts/Nurito_Sans_400.woff2) format('woff2');
+  font-family: "Nurito_Sans";
+  font-weight: 400;
+}
+
+@font-face {
+  src: url(../assets/fonts/Nurito_Sans_600.woff2) format('woff2');
+  font-family: "Nurito_Sans";
+  font-weight: 600;
+}
+
+@font-face {
+  src: url(../assets/fonts/Nurito_Sans_700.woff2) format('woff2');
+  font-family: "Nurito_Sans";
+  font-weight: 700;
+}
+
+:root {
+  font-size: 10px; // base font-size
+  font-family: "Nurito_Sans";
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
