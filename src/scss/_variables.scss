@@ -1,4 +1,11 @@
-@import "colors";
 @import "mixins";
 
+// z-indexes
+$zIndex_navigation_bar: 20;
+
+// toolbar
+$toolbar_height: 7.4rem;
+$toolbar_height_mobile: 9.7rem;
+
+// development helpers
 $assist-dash: 1px dashed #000;

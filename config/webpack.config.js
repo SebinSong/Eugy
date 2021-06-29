@@ -339,6 +339,7 @@ module.exports = function (webpackEnv) {
         }),
         '@components': paths.appComponents,
         '@assets': paths.appAssets,
+        '@images': path.join(paths.appAssets, 'images'),
         ...(modules.webpackAliases || {}),
       },
       plugins: [

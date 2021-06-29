@@ -1,13 +1,13 @@
 import React from 'react'
-
+// scss
 import './NavigationBar.scss'
+// child components
+import PageNavigation from './PageNavigation.js'
 
 export default function NavigationBar (props) {
   return (
-    <aside className="nvaigation-bar">
-      <ul>
-        
-      </ul>
+    <aside className="navigation-bar">
+      <PageNavigation />
     </aside>
   )
 }

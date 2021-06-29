@@ -1,5 +1,4 @@
 @import "typography";
-@import "colors";
 
 *,
 *::after,
@@ -15,3 +14,7 @@
   -webkit-tap-highlight-color: transparent;
   user-select: text;
 }
+
+@import "normalize";
+@import "color-light";
+@import "globals";
