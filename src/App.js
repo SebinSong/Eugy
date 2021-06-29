@@ -6,7 +6,7 @@ import {
 import './App.scss';
 
 // child components
-import NavigationBar from '@components/shared/navigation-bar/NavigationBar.js'
+import NavigationBar from '@components/shared/navigation-bar'
 
 import Home from '@components/pages/home/Home.js'
 

@@ -2,7 +2,9 @@
   position: fixed;
   top: 0;
   left: 0;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   z-index: $zIndex_navigation_bar;
   width: 100%;
   height: $toolbar_height;
@@ -11,13 +13,17 @@
   padding: 0 16rem;
 }
 
-.navigation-bar__page-nav {
+.navigation-bar__page-nav,
+.navigation-bar__toolbar {
   position: relative;
   display: inline-flex;
   height: 100%;
   width: max-content;
   align-items: center;
   justify-content: flex-start;
+}
+
+.navigation-bar__page-nav {
 
   > li {
     display: inline-block;
@@ -49,4 +55,24 @@
     height: 4.2rem;
     margin-top: 0.3rem;
   }
+}
+
+.navigation-bar__toolbar {
+   > li {
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+   }
+
+  .navigation-bar__icon {
+    display: inline-block;
+    width: 4.2rem;
+    height: 4.2rem;
+    line-height: 4.2rem;
+    text-align: center;
+    font-size: 2.3rem;
+    color: var(--text-0);
+    cursor: pointer;
+    border-radius: 50%;
+  } 
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import Types from 'prop-types'
 
 import logoImage from '@images/eugy_logo.png'
 
@@ -19,6 +20,10 @@ const TextNav = ({ to, name }) => (
       >{name}</NavLink>
   </li>
 )
+TextNav.propTypes = {
+  to: Types.string,
+  name: Types.string
+}
 
 function PageNavigation (props) {
   return (
