@@ -4,17 +4,23 @@ import Types from 'prop-types'
 // Registering components globally to React object
 
 const Icon = ({
-  name,
+  name = '',
   isBold,
-  classes = ''
+  classes = '',
+  children
 }) => {
   let classCombined = [
     'mi',
     isBold && 'mib',
+    'icon',
     classes
   ].filter(Boolean).join(' ')
 
-  return (<span className={classCombined}>{name}</span>)
+  return (
+    <span className={classCombined}>
+      {children || name}
+    </span>
+  )
 }
 
 Icon.propTypes = {

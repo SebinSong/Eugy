@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Icon } from 'react'
 import { NavLink } from 'react-router-dom'
 import Types from 'prop-types'
 
@@ -7,22 +7,36 @@ import logoImage from '@images/eugy_logo.png'
 // TODO: move it to somewhere where router settings are sitting
 const listData = [
   {to: '/how-to-make', name: 'How to Make', id: 'howtomake'},
-  {to: '/our-story', name: 'Our stroy', id: 'ourstory'},
+  {to: '/our-story', name: 'Our stroy', id: 'ourstory', hasArrow: true},
   {to: '/giving back', name: 'Giving Back', id: 'givingback'},
   {to: '/contact', name: 'Contact', id: 'contact'},
   {to: '/retail-login', name: 'Retail Login', id: 'retaillogin'}
 ]
 
-const TextNav = ({ to, name }) => (
-  <li>
-    <NavLink className="text-link"
-      to={to}
-      >{name}</NavLink>
-  </li>
-)
+const TextNav = ({ 
+  to = '', name,
+  hasArrow = false, classes = ''
+}) => {
+  const content = [
+    <span className="text">{name}</span>,
+    hasArrow && <Icon>expand_more</Icon>
+  ].filter(Boolean)
+
+  return (
+    <li className={classes}>
+      {
+        to ?
+        <NavLink className="text-link" to={to}>{content}</NavLink> :
+        <span className="text-link">{content}</span>
+      }
+    </li>
+  )
+}
 TextNav.propTypes = {
   to: Types.string,
-  name: Types.string
+  name: Types.string,
+  classes: Types.string,
+  hasArrow: Types.bool
 }
 
 function PageNavigation (props) {
@@ -35,9 +49,11 @@ function PageNavigation (props) {
         </NavLink>
       </li>
 
-      {listData.map(({
-        to, name, id
-      }) => <TextNav key={id} to={to} name={name} />)}
+      <TextNav classes="navigation-bar__shop-btn"
+        name="Shop"
+        hasArrow={true} />
+
+      { listData.map((item) => <TextNav key={item.id} { ...item } />) }
     </ul>
   )
 }

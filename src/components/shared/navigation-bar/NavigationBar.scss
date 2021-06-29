@@ -25,28 +25,31 @@
 
 .navigation-bar__page-nav {
 
-  > li {
+  li {
     display: inline-block;
     flex-shrink: 0;
     width: max-content;
-  }
 
-  > li.navigation-bar__logo {
-    margin-right: 0.6rem;
-  }
+    &.navigation-bar__logo {
+      margin-right: 0.6rem;
+    }
 
-  > li > a {
-    display: inline-block;
-    min-height: 4rem;
-  }
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 0 1.4rem;
+      line-height: 4rem;
+      min-height: 4rem;
+      cursor: pointer;
 
-  > li > a.active {
-    font-weight: 600;
-  }
+      &.active {
+        font-weight: 600;
+      }
 
-  > li > a.text-link {
-    padding: 0 1.6rem;
-    line-height: 4rem;
+      &:hover .text {
+        text-decoration: underline;
+      }
+    }
   }
 
   .navigation-bar__eugy-logo {
@@ -54,6 +57,12 @@
     width: 8.5rem;
     height: 4.2rem;
     margin-top: 0.3rem;
+  }
+
+  .navigation-bar__shop-btn {
+    .text-link .text {
+      font-weight: 700;
+    }
   }
 }
 
