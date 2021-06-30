@@ -4,6 +4,9 @@ import Types from 'prop-types'
 
 import logoImage from '@images/eugy_logo.png'
 
+// context
+import NavigationContext from './NavigationContext'
+
 // TODO: move it to somewhere where router settings are sitting
 const listData = [
   {to: '/how-to-make', name: 'How to Make', id: 'howtomake'},
@@ -15,11 +18,12 @@ const listData = [
 
 const TextNav = ({ 
   to = '', name,
-  hasArrow = false, classes = ''
+  hasArrow = false, classes = '',
+  onClick = null, onHover = null
 }) => {
   const content = [
-    <span className="text">{name}</span>,
-    hasArrow && <Icon>expand_more</Icon>
+    <span key="text" className="text">{name}</span>,
+    hasArrow && <Icon key="icon">expand_more</Icon>
   ].filter(Boolean)
 
   return (
@@ -27,11 +31,14 @@ const TextNav = ({
       {
         to ?
         <NavLink className="text-link" to={to}>{content}</NavLink> :
-        <span className="text-link">{content}</span>
+        <span className="text-link"
+          onClick={onClick}
+          onMouseEnter={onHover}>{content}</span>
       }
     </li>
   )
 }
+
 TextNav.propTypes = {
   to: Types.string,
   name: Types.string,
@@ -49,11 +56,24 @@ function PageNavigation (props) {
         </NavLink>
       </li>
 
-      <TextNav classes="navigation-bar__shop-btn"
-        name="Shop"
-        hasArrow={true} />
+      <NavigationContext.Consumer>
+        {
+          ({ injectAdditionalContent }) => (
+            <TextNav classes="navigation-bar__shop-btn"
+              name="Shop"
+              hasArrow={true}
+              onHover={() => injectAdditionalContent('shop-menu')}
+              onClick={() => injectAdditionalContent('shop-menu')} />
+          )
+        }
+      </NavigationContext.Consumer>
 
-      { listData.map((item) => <TextNav key={item.id} { ...item } />) }
+      { listData.map(
+          (item) => <TextNav
+
+            key={item.id}
+            { ...item } />
+        ) }
     </ul>
   )
 }
