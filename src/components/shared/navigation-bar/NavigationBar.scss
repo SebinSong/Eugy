@@ -92,5 +92,13 @@
     color: var(--text-0);
     cursor: pointer;
     border-radius: 50%;
-  } 
+  }
+}
+
+// additional content section
+.navigation-bar__additional-content {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: max-content;
 }
