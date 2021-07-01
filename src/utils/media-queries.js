@@ -20,8 +20,8 @@ function factory (deviceType) {
     const onResize = () => {
       const check = window.matchMedia(mqString(bp)).matches
 
-      if (matches !== check)
-        updateMatches(check)
+      // make sure the value of the 'matches' we compare to is not stale.
+      updateMatches(m => m !== check ? check : m)
     }
 
     // side-effect
