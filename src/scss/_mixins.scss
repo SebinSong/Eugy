@@ -1,5 +1,3 @@
-@import "variables";
-
 @mixin overflow-touch {
   -webkit-overflow-scrolling: touch;
   // Use 'momentum-based' scrolling where the content continues to scroll for a while
