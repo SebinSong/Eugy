@@ -1,11 +1,60 @@
-body {
-  font-size: 1.5rem;
-  color: var(--text-0);
+// Box sizing
+html {
+  box-sizing: border-box;
 }
 
-a {
-  text-decoration: none;
-  color: var(--text-0);
-  font-size: var(--size-0);
-  cursor: pointer;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+// List
+ul {
+  list-style: none;
+}
+
+// Media
+img,
+audio,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+// Iframe
+iframe {
+  border: 0;
+}
+
+// Table
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+  text-align: left;
+}
+
+th {
+  font-weight: normal;
+}
+
+fieldset {
+  border: none;
 }

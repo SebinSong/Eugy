@@ -1,0 +1,59 @@
+.is-unstyled {
+  background: none;
+  border: none;
+  border-radius: 0;
+  font-size: inherit;
+  min-height: auto;
+  color: inherit;
+  text-align: inherit;
+  padding: 0;
+
+  &:focus,
+  &:hover {
+    outline: none;
+    border: none;
+    color: inherit;
+    background: none;
+    box-shadow: none;
+  }
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+// screen-reader only
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.hide-desktop {
+  @include desktop {
+    display: none !important;
+  }
+}
+
+.hide-touch {
+  @include touch {
+    display: none !important;
+  }
+}
+
+.hide-phone {
+  @include phone {
+    display: none !important;
+  }
+}
+
+.hide-tablet {
+  @include tablet {
+    display: none !important;
+  }
+}
