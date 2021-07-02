@@ -17,6 +17,12 @@ a {
   cursor: pointer;
 }
 
+button {
+  @extend %reset-button;
+  cursor: pointer;
+  font-family: "Nurito_Sans";
+}
+
 img {
   display: block;
   max-width: 100%;

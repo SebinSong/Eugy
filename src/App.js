@@ -8,6 +8,7 @@ import './App.scss';
 
 // child components
 import NavigationBar from '@components/shared/navigation-bar'
+import Drawer from '@components/shared/drawer-menu'
 
 // context
 import RootContext from '@contexts/root-context.js'
@@ -18,7 +19,8 @@ function App() {
   const [isDrawerOpen, updateIsDrawerOpen] = useState(false)
 
   const rootApi = {
-    // drawer-related apis
+    // 1. drawer-related apis 
+    //    makes sure the drawer open/close can be triggered anywhere in the app.
     isDrawerOpen: () => isDrawerOpen,
     openDrawer: () => updateIsDrawerOpen(true),
     closeDrawer: () => updateIsDrawerOpen(false)
@@ -30,6 +32,8 @@ function App() {
     <RootContext.Provider value={rootApi}>
       <div className="app">
         <NavigationBar />
+
+        <Drawer />
 
         <Switch>
           <Route path='/'>

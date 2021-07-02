@@ -14,4 +14,10 @@
 
   // box-shadow
   --box-shadow-color: rgba(157, 157, 157, 0.17);
+
+  // drawer
+  --drawer-backdrop-bg-color: rgba(69, 69, 69, 0.72);
+  --drawer-bg-color: var(--background_white);
+  --drawer-bg-color_hover: var(--background_grey);
+  --drawer-divider-color: #ECECEC;
 }

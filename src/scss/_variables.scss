@@ -2,6 +2,8 @@
 
 // z-indexes
 $zIndex_navigation_bar: 20;
+$zIndex_drawer: 30;
+$zIndex_modal: 40;
 
 // toolbar
 $toolbar_height: 7.4rem;
@@ -14,6 +16,9 @@ $assist-dash: 1px dashed #000;
 $smallphone: 415px;
 $tablet: 769px;
 $desktop: 1200px;
+
+// drawer
+$drawer-max-width: 320px;
 
 // general
 $min-width: 320px;

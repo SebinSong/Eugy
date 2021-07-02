@@ -18,10 +18,10 @@ const Icon = ({
   ].filter(Boolean).join(' ')
 
   return (
-    <span className={classCombined}
+    <button className={classCombined}
       onClick={onClick}>
       {children || name}
-    </span>
+    </button>
   )
 }
 

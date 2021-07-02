@@ -14,6 +14,7 @@ import logoImage from '@images/eugy_logo.png'
 
 // context
 import NavigationContext, { additionalContentMap } from '@contexts/navigation-context.js'
+import RootContext from '@contexts/root-context.js'
 
 class NavigationBar extends Component {
   constructor (props) {
@@ -58,7 +59,14 @@ class NavigationBar extends Component {
     )
     const contentPhone = (
       <>
-        <Icon classes="navigation-bar__icon">menu</Icon>
+        <RootContext.Consumer>
+          {
+            ({ openDrawer }) => (
+              <Icon classes="navigation-bar__icon"
+                onClick={openDrawer}>menu</Icon>
+            )
+          }
+        </RootContext.Consumer>
 
         <img className="navigation-bar__eugy-logo"
           src={logoImage} alt="Eugy Logo" />
