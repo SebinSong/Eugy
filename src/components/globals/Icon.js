@@ -7,7 +7,8 @@ const Icon = ({
   name = '',
   isBold,
   classes = '',
-  children
+  children,
+  onClick = null
 }) => {
   let classCombined = [
     'mi',
@@ -17,7 +18,8 @@ const Icon = ({
   ].filter(Boolean).join(' ')
 
   return (
-    <span className={classCombined}>
+    <span className={classCombined}
+      onClick={onClick}>
       {children || name}
     </span>
   )

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ShopMenu from './ShopMenu'
+import ShopMenu from '@components/shared/navigation-bar/ShopMenu'
 
 export default React.createContext({})
 

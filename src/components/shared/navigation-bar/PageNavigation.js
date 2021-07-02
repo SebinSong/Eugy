@@ -1,11 +1,14 @@
-import React, { Icon } from 'react'
+import React, { 
+  Icon,
+  useContext
+} from 'react'
 import { NavLink } from 'react-router-dom'
 import Types from 'prop-types'
 
 import logoImage from '@images/eugy_logo.png'
 
 // context
-import NavigationContext from './NavigationContext'
+import NavigationContext from '@contexts/navigation-context.js'
 
 // TODO: move it to somewhere where router settings are sitting
 const listData = [
@@ -47,6 +50,10 @@ TextNav.propTypes = {
 }
 
 function PageNavigation (props) {
+  const {
+    injectAdditionalContent
+  } = useContext(NavigationContext);
+
   return (
     <ul className="navigation-bar__page-nav">
       <li className="navigation-bar__logo">
@@ -56,17 +63,11 @@ function PageNavigation (props) {
         </NavLink>
       </li>
 
-      <NavigationContext.Consumer>
-        {
-          ({ injectAdditionalContent }) => (
-            <TextNav classes="navigation-bar__shop-btn"
-              name="Shop"
-              hasArrow={true}
-              onHover={() => injectAdditionalContent('shop-menu')}
-              onClick={() => injectAdditionalContent('shop-menu')} />
-          )
-        }
-      </NavigationContext.Consumer>
+      <TextNav classes="navigation-bar__shop-btn"
+        name="Shop"
+        hasArrow={true}
+        onHover={() => injectAdditionalContent('shop-menu')}
+        onClick={() => injectAdditionalContent('shop-menu')} />
 
       { listData.map(
           (item) => <TextNav

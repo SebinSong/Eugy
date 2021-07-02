@@ -1,3 +1,22 @@
+%navbar-icon {
+  display: inline-block;
+  width: 3.2rem;
+  height: 3.2rem;
+  line-height: 3.2rem;
+  text-align: center;
+  font-size: 2.3rem;
+  color: var(--text-0);
+  cursor: pointer;
+  border-radius: 50%;
+
+  @include desktop {
+    width: 4.2rem;
+    height: 4.2rem;
+    line-height: 4.2rem;
+    font-size: 2.3rem;
+  }
+}
+
 .navigation-bar {
   position: fixed;
   top: 0;
@@ -15,11 +34,27 @@
 
 .navigation-bar__menu-container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: flex-end;
   width: 100%;
   height: $toolbar_height;
-  padding: 0 3.2rem;
+  padding: 0 2.4rem 1.6rem;
+
+  .navigation-bar__eugy-logo {
+    display: inline-block;
+    width: 6.5rem;
+    height: 3.2rem;
+    margin-top: 0.3rem;
+  }
+
+  .navigation-bar__icon {
+    @extend %navbar-icon;
+  }
+
+  @include tablet {
+    align-items: center;
+    padding: 0 2.4rem;
+  }
 
   @include desktop {
     padding: 0 16rem;
@@ -30,7 +65,7 @@
 .navigation-bar__toolbar {
   position: relative;
   display: inline-flex;
-  height: 100%;
+  height: max-content;
   width: max-content;
   align-items: center;
   justify-content: flex-start;
@@ -69,13 +104,6 @@
     }
   }
 
-  .navigation-bar__eugy-logo {
-    display: inline-block;
-    width: 6.5rem;
-    height: 3.2rem;
-    margin-top: 0.3rem;
-  }
-
   .navigation-bar__shop-btn {
     .text-link .text {
       font-weight: 700;
@@ -84,29 +112,10 @@
 }
 
 .navigation-bar__toolbar {
-   > li {
-     display: inline-flex;
-     align-items: center;
-     justify-content: center;
-   }
-
-  .navigation-bar__icon {
-    display: inline-block;
-    width: 3.2rem;
-    height: 3.2rem;
-    line-height: 3.2rem;
-    text-align: center;
-    font-size: 2.3rem;
-    color: var(--text-0);
-    cursor: pointer;
-    border-radius: 50%;
-
-    @include desktop {
-      width: 4.2rem;
-      height: 4.2rem;
-      line-height: 4.2rem;
-      font-size: 2.3rem;
-    }
+  > li {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 

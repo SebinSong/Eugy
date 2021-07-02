@@ -7,7 +7,7 @@ import React, {
 const settings = {
   smallPhone: { bp: 415,  mqString: v => `(max-width: ${v - 1}px)` },
   tablet: { bp: 769, mqString: v => `(min-width: ${v}px)` },
-  desktop: { bp: 1200, mqString: `(min-width: ${v}px)` }
+  desktop: { bp: 1200, mqString: v => `(min-width: ${v}px)` }
 }
 
 function factory (deviceType) {
@@ -15,7 +15,7 @@ function factory (deviceType) {
   const { mqString, bp } = settings[deviceType]
 
 
-  return ({ children }) => {
+  return ({ children, fallback = null }) => {
     const [matches, updateMatches] = useState(false)
     const onResize = () => {
       const check = window.matchMedia(mqString(bp)).matches
@@ -33,14 +33,17 @@ function factory (deviceType) {
       }
     }, []) // only after mount & unmount of the component
 
-    return <>{ matches ? children : null }</>
+    if (matches)
+      return <>{children}</>
+    else
+      return fallback ? <>{fallback}</> : null
   }
 }
 
-const MediaQueries = {
+const MQ = {
   Desktop: factory('desktop'),
   Tablet: factory('tablet'),
   SmallPhone: factory('smallPhone')
-}
+};
 
-export default MediaQueries;
+export default MQ;

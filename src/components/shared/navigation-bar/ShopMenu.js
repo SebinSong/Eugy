@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 // context
-import NavigationContext from './NavigationContext'
+import NavigationContext from '@contexts/navigation-context.js'
 
 // images
 import dodoImg from '@images/eugy/eugy_dodo.png'
@@ -74,22 +74,20 @@ const ListItem = ({
 }
 
 export default function ShopMenu (props) {
+  const {
+    removeAdditionalContent
+  } = useContext(NavigationContext);
+
   return (
-    <NavigationContext.Consumer>
-      {
-        ({ removeAdditionalContent }) => (
-          <div className="shop-menu__container"
-            onMouseLeave={removeAdditionalContent}>
-            <ul className="shop-menu__list">
-              {
-                shopMenuListData.map(
-                  item => <ListItem key={item.id} { ...item } />
-                )
-              }
-            </ul>
-          </div>
-        )
-      }
-    </NavigationContext.Consumer>
+    <div className="shop-menu__container"
+      onMouseLeave={removeAdditionalContent}>
+      <ul className="shop-menu__list">
+        {
+          shopMenuListData.map(
+            item => <ListItem key={item.id} { ...item } />
+          )
+        }
+      </ul>
+    </div>
   )
 }

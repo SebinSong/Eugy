@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import {
   Switch,
   Route
@@ -8,20 +9,35 @@ import './App.scss';
 // child components
 import NavigationBar from '@components/shared/navigation-bar'
 
+// context
+import RootContext from '@contexts/root-context.js'
+
 import Home from '@components/pages/home/Home.js'
 
 function App() {
-  return (
-    <div className="app">
-      <NavigationBar />
+  const [isDrawerOpen, updateIsDrawerOpen] = useState(false)
 
-      
-      <Switch>
-        <Route path='/'>
-          <Home />
-        </Route>
-      </Switch>
-    </div>
+  const rootApi = {
+    // drawer-related apis
+    isDrawerOpen: () => isDrawerOpen,
+    openDrawer: () => updateIsDrawerOpen(true),
+    closeDrawer: () => updateIsDrawerOpen(false)
+
+    // etc ...
+  }
+
+  return (
+    <RootContext.Provider value={rootApi}>
+      <div className="app">
+        <NavigationBar />
+
+        <Switch>
+          <Route path='/'>
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </RootContext.Provider>
   );
 }
 
