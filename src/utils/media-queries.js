@@ -3,7 +3,6 @@ import React, {
   useEffect
 } from 'react'
 
-
 const settings = {
   smallPhone: { bp: 415,  mqString: v => `(max-width: ${v - 1}px)` },
   tablet: { bp: 769, mqString: v => `(min-width: ${v}px)` },
@@ -13,7 +12,6 @@ const settings = {
 function factory (deviceType) {
   // in : device type , out: react component
   const { mqString, bp } = settings[deviceType]
-
 
   return ({ children, fallback = null }) => {
     const [matches, updateMatches] = useState(false)
@@ -27,6 +25,7 @@ function factory (deviceType) {
     // side-effect
     useEffect(() => {
       window.addEventListener('resize', onResize)
+      onResize() // do the initial check
 
       return () => {
         window.removeEventListener('resize', onResize)

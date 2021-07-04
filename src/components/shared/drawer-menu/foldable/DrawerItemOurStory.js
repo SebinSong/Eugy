@@ -1,11 +1,16 @@
 import React from 'react';
 import FoldableItem from './DrawerItemFoldable';
 
-function DrawerItemOurStory ({ 
-  children,
-  onClick = null
-}) {
-  return <FoldableItem>{ children }</FoldableItem>
+import { ourStoryMenuData } from '@components/shared/data.js'
+
+const SubListItem = ({ name }) => (
+  <li className="drawer__menu-sub-item our-story">{name}</li>
+)
+
+function DrawerItemOurStory ({ children }) {
+  return <FoldableItem classes="our-story"
+    InnerListItem={SubListItem}
+    innerListData={ourStoryMenuData}>{ children }</FoldableItem>
 };
 
 export default DrawerItemOurStory;

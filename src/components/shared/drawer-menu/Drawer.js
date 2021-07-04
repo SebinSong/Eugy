@@ -22,7 +22,8 @@ function Drawer (props) {
 
   return (
     <div className={classStr}>
-      <div className="drawer__backdrop"></div>
+      <div className="drawer__backdrop"
+        onClick={closeDrawer}></div>
 
       <div className="drawer__menu-container">
         <div className="drawer__menu-header">
