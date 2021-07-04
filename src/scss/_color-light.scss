@@ -4,6 +4,7 @@
 :root {
   // background
   --background_white: #FFFFFF;
+  --background_light_grey: #F6F6F6;
   --background_grey: #ECECEC;
   --background_light_blue: #F3F8FE;
 
@@ -14,6 +15,18 @@
 
   // box-shadow
   --box-shadow-color: rgba(157, 157, 157, 0.17);
+
+  // navigation-bar
+  --nav-bar-bg-color: var(--background_white);
+  --nav-bar-divider-color: #ECECEC;
+  --nav-bar-backdrop-bg-color: rgba(69, 69, 69, 0.72);
+
+  // search-bar
+  --search-bar-bg-color: var(--background_white, #FFFFFF);
+  --search-bar-text-color: #8F8F8F;
+  --search-bar-placeholder-text-color: rgba(143, 143, 143, 0.7);
+  --search-result-img-bg-color: #F8F8F8;
+  --search-result-border-color_hover: var(--background_grey);
 
   // drawer
   --drawer-backdrop-bg-color: rgba(69, 69, 69, 0.72);

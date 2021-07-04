@@ -1,0 +1,10 @@
+.search-bar-container {
+  position: relative;
+  display: block;
+  align-self: flex-end;
+  width: 100%;
+  max-width: $search-bar-max-width;
+  min-height: $search-bar-height;
+  height: max-content;
+  background-color: var(--search-bar-bg-color);
+}

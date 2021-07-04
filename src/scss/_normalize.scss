@@ -26,6 +26,37 @@ ul {
   list-style: none;
 }
 
+// input
+input,
+textarea,
+[contenteditable="true"] {
+  -webkit-touch-callout: default !important;
+  -webkit-user-select: auto !important;
+  -khtml-user-select: auto !important;
+  -moz-user-select: auto !important;
+  -ms-user-select: auto !important;
+  -o-user-select: auto !important;
+  user-select: auto !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input {
+  border: none;
+  outline: none;
+
+  &:focus {
+    border: none;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 // Media
 img,
 audio,

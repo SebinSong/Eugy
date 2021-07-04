@@ -21,15 +21,13 @@
   position: fixed;
   top: 0;
   left: 0;
-  display: block;
-  align-items: center;
-  justify-content: space-between;
-  z-index: $zIndex_navigation_bar;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   width: 100%;
-  min-height: $toolbar_height;
-  height: max-content;
-  background-color: var(--background_white);
+  height: auto;
   box-shadow: 0px 4px 4px var(--box-shadow-color);
+  z-index: $zIndex_navigation_bar;
 }
 
 .navigation-bar__menu-container {
@@ -39,6 +37,8 @@
   width: 100%;
   height: $toolbar_height;
   padding: 0 2.4rem 1.6rem;
+  border-bottom: 1px solid var(--nav-bar-divider-color);
+  background-color: var(--nav-bar-bg-color);
 
   .navigation-bar__eugy-logo {
     display: inline-block;
@@ -196,3 +196,15 @@
   }
 }
 
+// backdrop
+.navigation-bar__backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  background-color: var(--nav-bar-backdrop-bg-color);
+  z-index: -1;
+  pointer-events: none;
+}

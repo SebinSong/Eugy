@@ -1,8 +1,12 @@
 import React from 'react';
 
-function DrawerItem ({ children }) {
+function DrawerItem ({ 
+  children,
+  onClick
+}) {
   return (
-    <li className="drawer__list-item">
+    <li className="drawer__list-item"
+      onClick={onClick}>
       <button className="drawer__list-item-btn">{children}</button>
     </li>
   )

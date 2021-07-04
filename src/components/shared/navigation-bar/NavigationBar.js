@@ -8,6 +8,7 @@ import './NavigationBar.scss'
 import MQ from '@utils/media-queries.js'
 import PageNavigation from './PageNavigation.js'
 import Toolbar from './Toolbar.js'
+import SearchBar from './search-bar'
 
 // assets
 import logoImage from '@images/eugy_logo.png'
@@ -84,9 +85,14 @@ class NavigationBar extends Component {
               {contentTablet}
             </MQ.Tablet>
           </div>
+
+          <SearchBar />
+
           <div className="navigation-bar__additional-content">
             {additionalContent}
           </div>
+
+          <div className="navigation-bar__backdrop" />
         </aside>
       </NavigationContext.Provider>
     )
