@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/Eugy/static/css/main.4bdb9d97.chunk.css",
+    "main.js": "/Eugy/static/js/main.ce861274.chunk.js",
+    "main.js.map": "/Eugy/static/js/main.ce861274.chunk.js.map",
+    "runtime-main.js": "/Eugy/static/js/runtime-main.bb3a1a91.js",
+    "runtime-main.js.map": "/Eugy/static/js/runtime-main.bb3a1a91.js.map",
+    "static/js/2.13556d20.chunk.js": "/Eugy/static/js/2.13556d20.chunk.js",
+    "static/js/2.13556d20.chunk.js.map": "/Eugy/static/js/2.13556d20.chunk.js.map",
+    "index.html": "/Eugy/index.html",
+    "static/css/main.4bdb9d97.chunk.css.map": "/Eugy/static/css/main.4bdb9d97.chunk.css.map",
+    "static/js/2.13556d20.chunk.js.LICENSE.txt": "/Eugy/static/js/2.13556d20.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/Eugy/static/media/Nurito_Sans_700.c04dce0c.woff2",
+    "static/media/eugy_cardinal.392a3896.png": "/Eugy/static/media/eugy_cardinal.392a3896.png",
+    "static/media/eugy_dodo.a2c5091e.png": "/Eugy/static/media/eugy_dodo.a2c5091e.png",
+    "static/media/eugy_hedgehog.afa402fb.png": "/Eugy/static/media/eugy_hedgehog.afa402fb.png",
+    "static/media/eugy_mermaid.94dedc4f.png": "/Eugy/static/media/eugy_mermaid.94dedc4f.png",
+    "static/media/eugy_turtle.cedc6058.png": "/Eugy/static/media/eugy_turtle.cedc6058.png",
+    "static/media/eugy_tyranno.6ba2dca9.png": "/Eugy/static/media/eugy_tyranno.6ba2dca9.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bb3a1a91.js",
+    "static/js/2.13556d20.chunk.js",
+    "static/css/main.4bdb9d97.chunk.css",
+    "static/js/main.ce861274.chunk.js"
+  ]
+}
