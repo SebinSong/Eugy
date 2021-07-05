@@ -16,6 +16,13 @@
     border-bottom: 1px solid var(--nav-bar-divider-color);
   }
 
+  .search-result__result-list {
+    display: block;
+    width: 100%;
+    max-height: 40rem;
+    overflow-y: auto;
+  }
+
   .search-result__list-item {
     display: flex;
     align-items: center;

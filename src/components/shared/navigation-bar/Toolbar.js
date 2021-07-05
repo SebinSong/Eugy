@@ -1,9 +1,18 @@
-import React, { Icon } from 'react'
+import React, { 
+  Icon,
+  useContext
+} from 'react'
+
+import NavigationContext from '@contexts/navigation-context.js'
 
 const Toolbar = (props) => {
+  const {
+    toggleSearchBar
+  } = useContext(NavigationContext);
+
   return (
     <ul className="navigation-bar__toolbar">
-      <li>
+      <li onClick={toggleSearchBar}>
         <Icon classes="navigation-bar__icon"
           name="search" />
       </li>

@@ -1,12 +1,12 @@
 import React from 'react';
 
 function SearchResultItem ({
-  name, imgPath, price
+  name, imgName, price
 }) {
   return (
     <li className="search-result__list-item">
       <span className="img-container">
-        <img src={imgPath} alt={name} />
+        <img src={require(`@images/eugy/${imgName}`).default} alt={name} />
       </span>
 
       <span className="product-info">

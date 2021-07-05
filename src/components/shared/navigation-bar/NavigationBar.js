@@ -21,12 +21,17 @@ class NavigationBar extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      additionalContent: null
+      additionalContent: null,
+      isSearchBarOn: false
     }
 
     this.additionalContentApi = {
       injectAdditionalContent: this.injectAdditionalContent,
-      removeAdditionalContent: this.removeAdditionalContent
+      removeAdditionalContent: this.removeAdditionalContent,
+
+      // searchBar
+      isSearchBarOn: () => this.state.isSearchBarOn,
+      toggleSearchBar: this.toggleSearchBar
     }
   }
 
@@ -45,6 +50,18 @@ class NavigationBar extends Component {
     this.setState({
       additionalContent: null
     })
+  }
+
+  toggleSearchBar = () => {
+    this.setState(
+      ({ isSearchBarOn }) => {
+        console.log('current: ', isSearchBarOn)
+
+        return ({
+          isSearchBarOn: !isSearchBarOn
+        })
+      }
+    )
   }
 
   render () {
@@ -92,7 +109,8 @@ class NavigationBar extends Component {
             {additionalContent}
           </div>
 
-          <div className="navigation-bar__backdrop" />
+          <div className={`navigation-bar__backdrop ${this.state.isSearchBarOn ? 'is-on': ''}`} 
+            onClick={this.toggleSearchBar} />
         </aside>
       </NavigationContext.Provider>
     )

@@ -1,7 +1,7 @@
 import React from 'react';
 import FoldableItem from './DrawerItemFoldable';
 
-import { ourStoryMenuData } from '@components/shared/data.js'
+import { ourStoryMenuData } from '@components/shared/view-data/data.js'
 
 const SubListItem = ({ name }) => (
   <li className="drawer__menu-sub-item our-story">{name}</li>

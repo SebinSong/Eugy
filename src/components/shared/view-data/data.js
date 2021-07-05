@@ -1,10 +1,11 @@
 // images
-import dodoImg from '@images/eugy/eugy_dodo.png'
-import mermaidImg from '@images/eugy/eugy_mermaid.png'
-import tyrannoImg from '@images/eugy/eugy_tyranno.png'
-import cardinalImg from '@images/eugy/eugy_cardinal.png'
-import hedgehogImg from '@images/eugy/eugy_hedgehog.png'
-import turtleImg from '@images/eugy/eugy_turtle.png'
+
+import tyrannoImg from '@images/eugy/005_tyranno.png'
+import dodoImg from '@images/eugy/073_dodo.png'
+import mermaidImg from '@images/eugy/050_mermaid.png'
+import cardinalImg from '@images/eugy/068_cardinal.png'
+import hedgehogImg from '@images/eugy/074_hedgehog.png'
+import turtleImg from '@images/eugy/038_turtle.png'
 
 const shopMenuListData = [
   {

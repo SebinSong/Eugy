@@ -1,5 +1,7 @@
 .search-bar-container {
-  position: relative;
+  position: absolute;
+  right: 0;
+  top: $toolbar_height;
   display: block;
   align-self: flex-end;
   width: 100%;
@@ -7,4 +9,10 @@
   min-height: $search-bar-height;
   height: max-content;
   background-color: var(--search-bar-bg-color);
+  transform: translateX(110%);
+  transition: transform 0.3s ease-out;
+
+  &.is-on {
+    transform: translateX(0%);
+  }
 }

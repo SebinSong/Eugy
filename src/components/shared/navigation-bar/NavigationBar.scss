@@ -206,5 +206,12 @@
   display: block;
   background-color: var(--nav-bar-backdrop-bg-color);
   z-index: -1;
+  opacity: 0;
   pointer-events: none;
+  transition: opacity 0.2s ease-out;
+
+  &.is-on {
+    opacity: 1;
+    pointer-events: unset;
+  }
 }
