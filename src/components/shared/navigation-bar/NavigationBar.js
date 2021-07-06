@@ -55,8 +55,6 @@ class NavigationBar extends Component {
   toggleSearchBar = () => {
     this.setState(
       ({ isSearchBarOn }) => {
-        console.log('current: ', isSearchBarOn)
-
         return ({
           isSearchBarOn: !isSearchBarOn
         })
