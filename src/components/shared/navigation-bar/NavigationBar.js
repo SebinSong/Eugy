@@ -1,7 +1,4 @@
-import React, { 
-  Component,
-  Icon
-} from 'react'
+import React, { useState, Icon } from 'react'
 // scss
 import './NavigationBar.scss'
 // components
@@ -13,106 +10,71 @@ import SearchBar from './search-bar'
 // assets
 import logoImage from '@images/eugy_logo.png'
 
+// redux
+import { useDispatch, useSelector } from 'react-redux'
+import { openDrawer } from '@store/features/drawerSlice.js'
+import { toggleSearchbar } from '@store/features/searchbarSlice.js'
+
 // context
 import NavigationContext, { additionalContentMap } from '@contexts/navigation-context.js'
-import RootContext from '@contexts/root-context.js'
 
-class NavigationBar extends Component {
-  constructor (props) {
-    super(props);
-    this.state = {
-      additionalContent: null,
-      isSearchBarOn: false
-    }
+function NavigationBar (props) {
+  // searchbar
+  const dispatch = useDispatch()
+  const isSearchbarOn = useSelector(({ searchbar }) => searchbar.isOpen)
 
-    this.additionalContentApi = {
-      injectAdditionalContent: this.injectAdditionalContent,
-      removeAdditionalContent: this.removeAdditionalContent,
-
-      // searchBar
-      isSearchBarOn: () => this.state.isSearchBarOn,
-      toggleSearchBar: this.toggleSearchBar
-    }
-  }
-
-  injectAdditionalContent = (name) => {
+  // additional content logic
+  const [additionalContent, updateAdditionalContent] = useState(null)
+  const injectAdditionalContent = (name) => {
     const chosen = additionalContentMap[name]
-    if (!chosen ||
-      this.state.additionalContent === chosen)
-      return;
-
-    this.setState({
-      additionalContent: chosen
-    })
-  }
-
-  removeAdditionalContent = () => {
-    this.setState({
-      additionalContent: null
-    })
-  }
-
-  toggleSearchBar = () => {
-    this.setState(
-      ({ isSearchBarOn }) => {
-        return ({
-          isSearchBarOn: !isSearchBarOn
-        })
-      }
+    updateAdditionalContent(
+      current => !chosen || current === chosen ? current : chosen
     )
   }
-
-  render () {
-    const {
-      additionalContent
-    } = this.state
-
-    const contentTablet = (
-      <>
-        <PageNavigation />
-        <Toolbar />
-      </>
-    )
-    const contentPhone = (
-      <>
-        <RootContext.Consumer>
-          {
-            ({ openDrawer }) => (
-              <Icon classes="navigation-bar__icon"
-                onClick={openDrawer}>menu</Icon>
-            )
-          }
-        </RootContext.Consumer>
-
-        <img className="navigation-bar__eugy-logo"
-          src={logoImage} alt="Eugy Logo" />
-
-        <Toolbar />
-      </>
-    )
-
-
-    return (
-      <NavigationContext.Provider value={this.additionalContentApi}>
-        <aside className="navigation-bar">
-          <div className="navigation-bar__menu-container">
-            <MQ.Tablet fallback={contentPhone}>
-              {contentTablet}
-            </MQ.Tablet>
-          </div>
-
-          <SearchBar />
-
-          <div className="navigation-bar__additional-content">
-            {additionalContent}
-          </div>
-
-          <div className={`navigation-bar__backdrop ${this.state.isSearchBarOn ? 'is-on': ''}`} 
-            onClick={this.toggleSearchBar} />
-        </aside>
-      </NavigationContext.Provider>
-    )
+  const removeAdditionalContent = () => updateAdditionalContent(null)
+  const additionalContentApi = {
+    injectAdditionalContent,
+    removeAdditionalContent
   }
-};
+
+  const contentTablet = (
+    <>
+      <PageNavigation />
+      <Toolbar />
+    </>
+  )
+  const contentPhone = (
+    <>
+      <Icon classes="navigation-bar__icon"
+        onClick={() => dispatch(openDrawer())}>menu</Icon>
+
+      <img className="navigation-bar__eugy-logo"
+        src={logoImage} alt="Eugy Logo" />
+
+      <Toolbar />
+    </>
+  )
+
+  return (
+    <NavigationContext.Provider value={additionalContentApi}>
+      <aside className="navigation-bar">
+        <div className="navigation-bar__menu-container">
+          <MQ.Tablet fallback={contentPhone}>
+            {contentTablet}
+          </MQ.Tablet>
+        </div>
+
+        <SearchBar />
+
+        <div className="navigation-bar__additional-content">
+          {additionalContent}
+        </div>
+
+        <div className={`navigation-bar__backdrop ${isSearchbarOn ? 'is-on': ''}`} 
+          onClick={() => dispatch(toggleSearchbar())} />
+      </aside>
+    </NavigationContext.Provider>
+  )
+}
 
 export default NavigationBar;

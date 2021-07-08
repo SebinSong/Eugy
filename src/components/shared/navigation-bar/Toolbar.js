@@ -1,18 +1,14 @@
-import React, { 
-  Icon,
-  useContext
-} from 'react'
+import React, { Icon } from 'react'
+import { useDispatch } from 'react-redux'
+import { toggleSearchbar } from '@store/features/searchbarSlice.js'
 
-import NavigationContext from '@contexts/navigation-context.js'
 
 const Toolbar = (props) => {
-  const {
-    toggleSearchBar
-  } = useContext(NavigationContext);
+  const dispatch = useDispatch()
 
   return (
     <ul className="navigation-bar__toolbar">
-      <li onClick={toggleSearchBar}>
+      <li onClick={() => dispatch(toggleSearchbar())}>
         <Icon classes="navigation-bar__icon"
           name="search" />
       </li>

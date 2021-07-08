@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   Switch,
   Route
@@ -10,26 +10,15 @@ import './App.scss';
 import NavigationBar from '@components/shared/navigation-bar'
 import Drawer from '@components/shared/drawer-menu'
 
-// context
-import RootContext from '@contexts/root-context.js'
+// redux
+import { Provider } from 'react-redux'
+import store from '@store/index.js'
 
 import Home from '@components/pages/home/Home.js'
 
 function App() {
-  const [isDrawerOpen, updateIsDrawerOpen] = useState(false)
-
-  const rootApi = {
-    // 1. drawer-related apis 
-    //    makes sure the drawer open/close can be triggered anywhere in the app.
-    isDrawerOpen: () => isDrawerOpen,
-    openDrawer: () => updateIsDrawerOpen(true),
-    closeDrawer: () => updateIsDrawerOpen(false)
-
-    // etc ...
-  }
-
   return (
-    <RootContext.Provider value={rootApi}>
+    <Provider store={store}>
       <div className="app">
         <NavigationBar />
 
@@ -41,7 +30,7 @@ function App() {
           </Route>
         </Switch>
       </div>
-    </RootContext.Provider>
+    </Provider>
   );
 }
 

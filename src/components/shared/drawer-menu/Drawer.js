@@ -1,7 +1,8 @@
-import React, { 
-  Icon,
-  useContext
-} from 'react';
+import React, { Icon } from 'react';
+import {
+  useSelector,
+  useDispatch
+} from 'react-redux';
 
 // scss
 import './Drawer.scss';
@@ -10,25 +11,24 @@ import DrawerItem from './DrawerItem';
 import OurStoryItem from './foldable/DrawerItemOurStory'
 import ShopItem from './foldable/DrawerItemShop'
 
-// context
-import rootContext from '@contexts/root-context.js'
+// drawer control
+import { closeDrawer } from '@store/features/drawerSlice.js'
 
 function Drawer (props) {
-  const {
-    isDrawerOpen,
-    closeDrawer
-  } = useContext(rootContext);
-  const classStr = `drawer-container ${isDrawerOpen() ? 'is-open' : ''}`
+  const dispatch = useDispatch()
+
+  const isDrawerOpen = useSelector(state => state.drawer.isOpen)
+  const classStr = `drawer-container ${isDrawerOpen ? 'is-open' : ''}`
 
   return (
     <div className={classStr}>
       <div className="drawer__backdrop"
-        onClick={closeDrawer}></div>
+        onClick={() => dispatch(closeDrawer())}></div>
 
       <div className="drawer__menu-container">
         <div className="drawer__menu-header">
           <Icon classes="drawer__close-btn"
-            onClick={closeDrawer}>close</Icon>
+            onClick={() => dispatch(closeDrawer())}>close</Icon>
         </div>
 
         <ul className="drawer__menu-list">

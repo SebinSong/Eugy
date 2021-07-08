@@ -342,6 +342,7 @@ module.exports = function (webpackEnv) {
         '@images': path.join(paths.appAssets, 'images'),
         '@utils': path.join(paths.appSrc, 'utils'),
         '@contexts': path.join(paths.appSrc, 'contexts'),
+        '@store': path.join(paths.appSrc, 'store'),
         ...(modules.webpackAliases || {}),
       },
       plugins: [

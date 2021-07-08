@@ -1,12 +1,9 @@
-import React, {
-  useState,
-  useContext
-} from 'react';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import './SearchBar.scss';
 
 // context
-import NavigationBarContext from '@contexts/navigation-context.js'
 import SearchBarContext from '@contexts/search-bar-context.js'
 
 // components
@@ -21,7 +18,7 @@ function SearchBar (props) {
     updateInputValue(value)
   }
 
-  const { isSearchBarOn } = useContext(NavigationBarContext);
+  const isSearchbarOn = useSelector(({ searchbar }) => searchbar.isOpen)
   const searchBarApi = {
     value: () => inputValue,
     clearValue: () => updateInputValue('')
@@ -29,7 +26,7 @@ function SearchBar (props) {
 
   return (
     <SearchBarContext.Provider value={searchBarApi}>
-      <div className={`search-bar-container ${isSearchBarOn() ? 'is-on' : ''}`}>
+      <div className={`search-bar-container ${isSearchbarOn ? 'is-on' : ''}`}>
         <SearchBarInput 
           value={inputValue}
           onInput={onSearchBarInput} />
