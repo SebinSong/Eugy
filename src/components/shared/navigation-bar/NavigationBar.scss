@@ -65,7 +65,7 @@
 .navigation-bar__toolbar {
   position: relative;
   display: inline-flex;
-  height: max-content;
+  height: 100%;
   width: max-content;
   align-items: center;
   justify-content: flex-start;
@@ -74,9 +74,11 @@
 .navigation-bar__page-nav {
 
   li {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     flex-shrink: 0;
     width: max-content;
+    height: 100%;
 
     &.navigation-bar__logo {
       margin-right: 0.6rem;

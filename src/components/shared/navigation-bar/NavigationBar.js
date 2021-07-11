@@ -3,7 +3,7 @@ import React, { useState, Icon } from 'react'
 import './NavigationBar.scss'
 // components
 import MQ from '@utils/media-queries.js'
-import PageNavigation from './PageNavigation.js'
+import PageNavigation from './page-navigation/PageNavigation.js'
 import Toolbar from './Toolbar.js'
 import SearchBar from './search-bar'
 

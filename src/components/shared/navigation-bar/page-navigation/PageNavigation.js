@@ -4,9 +4,20 @@ import React, {
 import { NavLink } from 'react-router-dom'
 import Types from 'prop-types'
 
+import OurStoryItem from './OurstoryItem.js'
+import ShopItem from './ShopItem.js'
+
 import logoImage from '@images/eugy_logo.png'
 
 // TODO: move it to somewhere where router settings are sitting
+const menuData = {
+  'shop': { hovable: true, component: <ShopItem /> },
+  'howToMake': { to: '/how-to-make', name: 'How to Make', id: 'howtomake' },
+  'outStory': { hovable: true, component: <OurStoryItem /> },
+  'givingBack': { to: '/giving back', name: 'Giving Back', id: 'givingback' },
+  'contact': { to: '/contact', name: 'Contact', id: 'contact' },
+  'retailLogin': { to: '/retail-login', name: 'Retail Login', id: 'retaillogin' }
+}
 const listData = [
   {to: '/how-to-make', name: 'How to Make', id: 'howtomake'},
   {to: '/our-story', name: 'Our stroy', id: 'ourstory', hasArrow: true},
@@ -17,7 +28,7 @@ const listData = [
 
 const TextNav = ({ 
   to = '', name,
-  hasArrow = false, classes = '',
+  hasArrow = false, classes = null,
   onClick = null, onHover = null
 }) => {
   const content = [
@@ -58,6 +69,8 @@ function PageNavigation (props) {
       <TextNav classes="navigation-bar__shop-btn"
         name="Shop"
         hasArrow={true} />
+
+      <TextNav ></TextNav>
 
       { listData.map(
           (item) => <TextNav
