@@ -9,6 +9,7 @@ import './App.scss';
 // child components
 import NavigationBar from '@components/shared/navigation-bar'
 import Drawer from '@components/shared/drawer-menu'
+import ShoppingCart from '@components/shared/shopping-cart'
 
 // redux
 import { Provider } from 'react-redux'
@@ -23,6 +24,8 @@ function App() {
         <NavigationBar />
 
         <Drawer />
+
+        <ShoppingCart />
 
         <Switch>
           <Route path='/'>

@@ -3,34 +3,51 @@
 
 :root {
   // background
-  --background_white: #FFFFFF;
-  --background_light_grey: #F6F6F6;
-  --background_grey: #ECECEC;
-  --background_light_blue: #F3F8FE;
+  --background_0: #FFFFFF;
+  --background_0_1: #F6F6F6;
+  --background_0_2: #ECECEC;
+  --background_1: #F3F8FE;
 
   // texts
   --text-0: #2B3039;
   --text-0_1: #626D80;
+  --text-1: #FFFFFF;
   --warning-0: #FF3950;
+
+  // buttons
+  --button-primary-color: #FF3C3C;
+  --button-secondary-color: #00B896;
+  --button-text-color: var(--text-1);
 
   // box-shadow
   --box-shadow-color: rgba(157, 157, 157, 0.17);
 
   // navigation-bar
-  --nav-bar-bg-color: var(--background_white);
+  --nav-bar-bg-color: var(--background_0);
   --nav-bar-divider-color: #ECECEC;
   --nav-bar-backdrop-bg-color: rgba(69, 69, 69, 0.72);
 
   // search-bar
-  --search-bar-bg-color: var(--background_white, #FFFFFF);
+  --search-bar-bg-color: var(--background_0, #FFFFFF);
   --search-bar-text-color: #8F8F8F;
   --search-bar-placeholder-text-color: rgba(143, 143, 143, 0.7);
   --search-result-img-bg-color: #F8F8F8;
-  --search-result-border-color_hover: var(--background_grey);
+  --search-result-border-color_hover: var(--background_0_2);
 
   // drawer
   --drawer-backdrop-bg-color: rgba(69, 69, 69, 0.72);
-  --drawer-bg-color: var(--background_white);
-  --drawer-bg-color_hover: var(--background_grey);
+  --drawer-bg-color: var(--background_0);
+  --drawer-bg-color_hover: var(--background_0_2);
   --drawer-divider-color: #ECECEC;
+
+  // cart
+  --cart-backdrop-bg-color: rgba(69, 69, 69, 0.5);
+  --cart-bg-color: var(--background_0);
+  --cart-box-shadow: -6px 6px 14px rgba(0, 0, 0, 0.25);
+  --cart-divider-color: var(--background_0_2);
+  --cart-heading-color: var(--text-0);
+  --cart-text-color: #6F6F6F;
+  --cart-item-img-bg-color: #F8F8F8;
+  --cart-counter-text-color: #909090;
+  --cart-counter-bg-color: #ECECEC;
 }

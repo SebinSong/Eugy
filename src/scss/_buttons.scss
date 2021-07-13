@@ -1,0 +1,22 @@
+button.is-primary,
+button.is-secondary {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-width: $button-min-width;
+  min-height: $button-min-height;
+  border-radius: 0.8rem;
+  color: var(--button-text-color);
+  font: {
+    size: 1.6rem;
+  }
+}
+
+$button-type-list: 'primary' 'secondary';
+
+@each $btn-type in $button-type-list {
+  button.is-#{$btn-type} {
+    background-color: var(--button-#{$btn-type}-color);
+  }
+}

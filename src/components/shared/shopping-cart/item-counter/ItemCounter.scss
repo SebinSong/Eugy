@@ -1,0 +1,28 @@
+.item-counter-container {
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  height: max-content;
+  background-color: var(--cart-counter-bg-color);
+  color: var(--cart-counter-text-color);
+
+  > * {
+    display: inline-block;
+    width: 2.4rem;
+    height: 2.4rem;
+    line-height: 2.4rem;
+    text-align: center;
+    user-select: none;
+  }
+
+  button.item-counter__btn {
+    cursor: pointer;
+    color: inherit;
+    font-size: var(--size-2);
+  }
+
+  .item-counter__value {
+    font-size: var(--size-0);
+    width: 2rem;
+  }
+}
