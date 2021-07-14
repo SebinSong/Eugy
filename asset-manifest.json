@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Eugy/static/css/main.51a6b4a8.chunk.css",
-    "main.js": "/Eugy/static/js/main.b4ebc570.chunk.js",
-    "main.js.map": "/Eugy/static/js/main.b4ebc570.chunk.js.map",
+    "main.css": "/Eugy/static/css/main.91642fdb.chunk.css",
+    "main.js": "/Eugy/static/js/main.116110c6.chunk.js",
+    "main.js.map": "/Eugy/static/js/main.116110c6.chunk.js.map",
     "runtime-main.js": "/Eugy/static/js/runtime-main.bb3a1a91.js",
     "runtime-main.js.map": "/Eugy/static/js/runtime-main.bb3a1a91.js.map",
-    "static/js/2.1c9589a5.chunk.js": "/Eugy/static/js/2.1c9589a5.chunk.js",
-    "static/js/2.1c9589a5.chunk.js.map": "/Eugy/static/js/2.1c9589a5.chunk.js.map",
+    "static/js/2.756f14f2.chunk.js": "/Eugy/static/js/2.756f14f2.chunk.js",
+    "static/js/2.756f14f2.chunk.js.map": "/Eugy/static/js/2.756f14f2.chunk.js.map",
     "index.html": "/Eugy/index.html",
-    "static/css/main.51a6b4a8.chunk.css.map": "/Eugy/static/css/main.51a6b4a8.chunk.css.map",
-    "static/js/2.1c9589a5.chunk.js.LICENSE.txt": "/Eugy/static/js/2.1c9589a5.chunk.js.LICENSE.txt",
+    "static/css/main.91642fdb.chunk.css.map": "/Eugy/static/css/main.91642fdb.chunk.css.map",
+    "static/js/2.756f14f2.chunk.js.LICENSE.txt": "/Eugy/static/js/2.756f14f2.chunk.js.LICENSE.txt",
     "static/media/001_kiwi.png": "/Eugy/static/media/001_kiwi.c18d7a19.png",
     "static/media/002_fantail.png": "/Eugy/static/media/002_fantail.8a1c85d7.png",
     "static/media/003_tui.png": "/Eugy/static/media/003_tui.d83df0a0.png",
@@ -86,8 +86,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.bb3a1a91.js",
-    "static/js/2.1c9589a5.chunk.js",
-    "static/css/main.51a6b4a8.chunk.css",
-    "static/js/main.b4ebc570.chunk.js"
+    "static/js/2.756f14f2.chunk.js",
+    "static/css/main.91642fdb.chunk.css",
+    "static/js/main.116110c6.chunk.js"
   ]
 }
