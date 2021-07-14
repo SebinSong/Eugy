@@ -2,6 +2,7 @@ import React, { Icon } from 'react'
 import { useDispatch } from 'react-redux'
 import { toggleSearchbar } from '@store/features/searchbarSlice.js'
 
+import './Toolbar.scss'
 
 const Toolbar = (props) => {
   const dispatch = useDispatch()

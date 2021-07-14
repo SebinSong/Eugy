@@ -4,27 +4,22 @@ import React, {
 import { NavLink } from 'react-router-dom'
 import Types from 'prop-types'
 
-import OurStoryItem from './OurstoryItem.js'
+import OurStoryItem from './OurStoryItem.js'
 import ShopItem from './ShopItem.js'
 
 import logoImage from '@images/eugy_logo.png'
 
+import './PageNavigation.scss'
+
 // TODO: move it to somewhere where router settings are sitting
 const menuData = {
-  'shop': { hovable: true, component: <ShopItem /> },
-  'howToMake': { to: '/how-to-make', name: 'How to Make', id: 'howtomake' },
-  'outStory': { hovable: true, component: <OurStoryItem /> },
-  'givingBack': { to: '/giving back', name: 'Giving Back', id: 'givingback' },
+  'shop': { hovable: true, component: <ShopItem key="shop" />, 'id': 'shop' },
+  'howToMake': { to: '/how-to-make', name: 'How to Make', id: 'how-to-make' },
+  'outStory': { hovable: true, component: <OurStoryItem key="our-story" />, 'id': 'our-story' },
+  'givingBack': { to: '/giving back', name: 'Giving Back', id: 'giving-back' },
   'contact': { to: '/contact', name: 'Contact', id: 'contact' },
-  'retailLogin': { to: '/retail-login', name: 'Retail Login', id: 'retaillogin' }
+  'retailLogin': { to: '/retail-login', name: 'Retail Login', id: 'retail-login' }
 }
-const listData = [
-  {to: '/how-to-make', name: 'How to Make', id: 'howtomake'},
-  {to: '/our-story', name: 'Our stroy', id: 'ourstory', hasArrow: true},
-  {to: '/giving back', name: 'Giving Back', id: 'givingback'},
-  {to: '/contact', name: 'Contact', id: 'contact'},
-  {to: '/retail-login', name: 'Retail Login', id: 'retaillogin'}
-]
 
 const TextNav = ({ 
   to = '', name,
@@ -57,6 +52,15 @@ TextNav.propTypes = {
 }
 
 function PageNavigation (props) {
+  const listItems = Object.values(menuData).map((item) => {
+    if (item.hovable)
+      return item.component
+    else
+      return <TextNav 
+        key={item.id}
+        { ...item } />
+  })
+
   return (
     <ul className="navigation-bar__page-nav">
       <li className="navigation-bar__logo">
@@ -66,18 +70,7 @@ function PageNavigation (props) {
         </NavLink>
       </li>
 
-      <TextNav classes="navigation-bar__shop-btn"
-        name="Shop"
-        hasArrow={true} />
-
-      <TextNav ></TextNav>
-
-      { listData.map(
-          (item) => <TextNav
-
-            key={item.id}
-            { ...item } />
-        ) }
+      { listItems }
     </ul>
   )
 }

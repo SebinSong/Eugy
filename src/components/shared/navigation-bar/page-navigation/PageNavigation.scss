@@ -1,0 +1,47 @@
+.navigation-bar__page-nav {
+  position: relative;
+  display: inline-flex;
+  height: 100%;
+  width: max-content;
+  align-items: center;
+  justify-content: flex-start;
+
+  li {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    width: max-content;
+    height: 100%;
+
+    &.navigation-bar__logo {
+      margin-right: 0.6rem;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 0 0.6rem;
+      line-height: 4rem;
+      min-height: 4rem;
+      cursor: pointer;
+
+      @include desktop {
+        padding: 0 1.4rem;
+      }
+
+      &.active {
+        font-weight: 600;
+      }
+
+      &:hover .text {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .navigation-bar__shop-btn {
+    .text-link .text {
+      font-weight: 700;
+    }
+  }
+}

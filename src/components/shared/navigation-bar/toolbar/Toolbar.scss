@@ -1,0 +1,20 @@
+// toolbar
+
+.navigation-bar__toolbar {
+  position: relative;
+  display: inline-flex;
+  height: 100%;
+  width: max-content;
+  align-items: center;
+  justify-content: flex-start;
+
+  > li {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include phone {
+    align-items: flex-end;
+  }
+}

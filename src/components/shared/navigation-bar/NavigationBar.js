@@ -4,7 +4,7 @@ import './NavigationBar.scss'
 // components
 import MQ from '@utils/media-queries.js'
 import PageNavigation from './page-navigation/PageNavigation.js'
-import Toolbar from './Toolbar.js'
+import Toolbar from './toolbar/Toolbar.js'
 import SearchBar from './search-bar'
 
 // assets
