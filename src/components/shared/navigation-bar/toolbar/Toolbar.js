@@ -1,8 +1,10 @@
 import React, { Icon } from 'react'
+
 import { useDispatch } from 'react-redux'
 import { toggleSearchbar } from '@store/features/searchbarSlice.js'
 
 import './Toolbar.scss'
+import { openCart } from '@store/features/cartSlice.js'
 
 const Toolbar = (props) => {
   const dispatch = useDispatch()
@@ -14,7 +16,7 @@ const Toolbar = (props) => {
           name="search" />
       </li>
       
-      <li>
+      <li onClick={() => dispatch(openCart())}>
         <Icon classes="navigation-bar__icon"
           name="shopping_cart" />
       </li>

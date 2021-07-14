@@ -32,7 +32,9 @@ function SearchResultItem ({
   return (
     <li className="search-result__list-item">
       <span className="img-container">
-        <img src={require(`@images/eugy/${imgName}`).default} alt={name} />
+        <img src={require(`@images/eugy/${imgName}`).default}
+          alt={name}
+          loading="lazy" />
       </span>
 
       <span className="product-info">
