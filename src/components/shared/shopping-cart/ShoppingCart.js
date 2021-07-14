@@ -24,7 +24,8 @@ function ShoppingCart (props) {
 
   return (
     <aside className={`cart-container ${isOpen ? 'is-open': ''}`}>
-      <div className="cart__backdrop"></div>
+      <div className="cart__backdrop"
+        onClick={() => dispatch(closeCart())}></div>
 
       <div className="cart__main">
         <header className="cart__header">
