@@ -50,4 +50,17 @@
   --cart-item-img-bg-color: #F8F8F8;
   --cart-counter-text-color: #909090;
   --cart-counter-bg-color: #ECECEC;
+
+  // sort-dropdown
+  --sort-dropdown-bg-color: var(--background_0);
+  --sort-dropdown-border-color: var(--background_0_2);
+
+  // page - common
+  --page-title-sub-text-color: #848484;
+
+  // page - shop
+  --shop-item-img-bg-color: #F8F8F8;
+  --shop-item-new-btn-bg-color: #FF3950;
+  --shop-showcase-item-box-shaow-color: rgba(0, 0, 0, 0.18);
+  --shop-showcase-item-color_hover: var(--warning-0);
 }

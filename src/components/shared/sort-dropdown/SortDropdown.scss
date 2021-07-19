@@ -1,0 +1,95 @@
+.sort-dropdown-container {
+  $dropdown-item-height: 4.8rem;
+  $dropdown-min-width: 12rem;
+
+  position: relative;
+  display: inline-block;
+  width: max-width;
+  height: max-content;
+
+  .sort-dropdown {
+    &__selected-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-width: $dropdown-min-width;
+      min-height: $dropdown-item-height;
+      width: max-content;
+      padding: 0 1.6rem;
+      cursor: pointer;
+      color: var(--text-0_1);
+      font-size: var(--size-0);
+      background-color: var(--sort-dropdown-bg-color);
+      border: 1px solid var(--sort-dropdown-border-color);
+      border-radius: 0.8rem;
+
+      > * {
+        display: inline-block;
+      }
+
+      .name {
+        margin-right: 1.2rem;
+      }
+
+      .arrow {
+        font-size: var(--size-2);
+        margin-right: -0.6rem;
+        transition: transform 0.25s ease-out;
+      }
+      
+      &:hover {
+        color: var(--text-0);
+        border-color: var(--text-0);
+      }
+    }
+
+    &__options-list {
+      position: absolute;
+      left: 0;
+      transform: translateY(100%);
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      width: max-content;
+      height: auto;
+
+      bottom: -2.6rem;
+      opacity: 0;
+      transition:
+        opacity 0.3s ease-out,
+        bottom 0.3s ease-out,
+        display 1ms linear;
+    }
+
+    &__option-item {
+      display: block;
+      min-width: $dropdown-min-width;
+      width: max-content;
+      height: $dropdown-item-height;
+      line-height: $dropdown-item-height;
+      text-align: left;
+      padding: 0 1.6rem;
+      border: 1px solid var(--sort-dropdown-border-color);
+      background-color: var(--sort-dropdown-bg-color);
+      color: var(--text-0_1);
+
+      &:hover {
+        color: var(--text-0);
+        border-color: var(--text-0);
+      }
+    }
+  }
+
+
+  &.is-open {
+    .sort-dropdown__selected-item > .arrow {
+      transform: rotate(180deg);
+    }
+
+    .sort-dropdown__options-list {
+      display: flex;
+      opacity: 1;
+      bottom: -0.6rem;
+    }
+  }
+}

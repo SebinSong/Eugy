@@ -56,7 +56,16 @@ const ourStoryMenuData = [
   }
 ]
 
+const ShopCategoryMenuData = [
+ { name: 'Fantasy', id: 'fantasy', imgPath: mermaidImg },
+ { name: 'Dino', id: 'dino', imgPath: tyrannoImg },
+ { name: 'Land', id: 'land', imgPath: hedgehogImg },
+ { name: 'Water', id: 'water', imgPath: turtleImg },
+ { name: 'Sky', id: 'sky', imgPath: cardinalImg }
+]
+
 export {
   shopMenuListData,
+  ShopCategoryMenuData,
   ourStoryMenuData
 }

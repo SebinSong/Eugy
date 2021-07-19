@@ -338,6 +338,7 @@ module.exports = function (webpackEnv) {
           'scheduler/tracing': 'scheduler/tracing-profiling',
         }),
         '@components': paths.appComponents,
+        '@viewdata': path.join(paths.appComponents, 'shared/view-data'),
         '@assets': paths.appAssets,
         '@images': path.join(paths.appAssets, 'images'),
         '@utils': path.join(paths.appSrc, 'utils'),

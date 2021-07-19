@@ -1,4 +1,41 @@
 .page {
+  position: relative;
+  display: block;
+  width: 100%;
   margin-top: $toolbar_height;
   padding: 1.2rem;
+
+  .page__title {
+    display: block;
+    width: 100%;
+    text: {
+      align: left;
+      transform: uppercase;
+    }
+
+    .title-sub {
+      display: block;
+      text-transform: uppercase;
+      color: var(--page-title-sub-text-color);
+      font-size: var(--size-1);
+    }
+
+    .title-main {
+      display: block;
+      color: var(--text-0);
+      font: {
+        weight: 700;
+        size: 3.2rem;
+      }
+    }
+  }
+
+  .page__content {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: $page-content-max-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

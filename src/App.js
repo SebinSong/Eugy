@@ -15,7 +15,9 @@ import ShoppingCart from '@components/shared/shopping-cart'
 import { Provider } from 'react-redux'
 import store from '@store/index.js'
 
-import Home from '@components/pages/home/Home.js'
+// pages 
+// import Home from '@components/pages/home/Home.js'
+import Shop from '@components/pages/shop/Shop.js'
 
 function App() {
   return (
@@ -28,8 +30,12 @@ function App() {
         <ShoppingCart />
 
         <Switch>
+          <Route path='/shop'>
+            <Shop />
+          </Route>
+
           <Route path='/'>
-            <Home />
+            <Shop />
           </Route>
         </Switch>
       </div>
